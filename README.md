@@ -1,3 +1,3 @@
 # GraphSol
-A Protein Solubility Predictor developed by Graph Convolutional Network and Predicted Contact Map
-(Under developed)
+A Protein Solubility Predictor developed by Graph Convolutional Network and Predicted Contact Map  
+(Under developed......)
