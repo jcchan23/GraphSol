@@ -1,5 +1,7 @@
 # GraphSol
-A Protein Solubility Predictor developed by Graph Convolutional Network and Predicted Contact Map  
+A Protein Solubility Predictor developed by Graph Convolutional Network and Predicted Contact Map
+
+The source code for our paper [Structure-aware protein solubility prediction from sequence through graph convolutional network and predicted contact map](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00488-1)
 
 Please use [SPOT-Contact](https://sparks-lab.org/downloads/) to generate all the features. (This step will take most of the time.)
 
