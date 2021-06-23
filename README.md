@@ -161,6 +161,6 @@ Please cite the following paper if you use this code in your work.
 ```
 
 ## TODO
-We will merge the predict workflow into the original workflow
+We will merge the predict workflow into the original workflow.
 
 (Under developed...)
