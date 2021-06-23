@@ -11,8 +11,8 @@ please refer the path `./Data/Feature Link.txt` and download `Node Features.zip`
 
 ### Step 2: Decompress all `.zip` files
 please unzip 3 zip files and make the corresponding folder into the correct paths.
-- `./Data/Node_Features.zip` -> `./Data/node_features`
-- `./Data/Edge_Features.zip` -> `./Data/edge_features`
+- `./Data/node_features.zip` -> `./Data/node_features`
+- `./Data/edge_features.zip` -> `./Data/edge_features`
 - `./Data/fasta.zip` -> `./Data/fasta`
 
 ### Step 3: Run the training code
