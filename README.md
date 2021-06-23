@@ -98,6 +98,8 @@ Note:
 
 (3) In the software SPOT-Contact, it needs a sequence file with suffix `.fasta`, thus you can rename the original fasta file `abgB` to `abgB.fasta` after generating other features 
 
+(4) **THIS STEP WILL COST MOST OF THE TIME !!!!!** (The sequence with more amino acids will cost more time, we recommend to use protein sequence with less than 700 amino acids.)
+
 | Software | Version | Input | Output |
 | -------- | -------- | -------- | --------|
 | [PSI-BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&PROGRAM=blastp&BLAST_PROGRAMS=psiBlast) | v2.7.1 | abgB | abgB.bla, abgB.pssm |
