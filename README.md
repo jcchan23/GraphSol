@@ -45,7 +45,7 @@ $ python Test.py
 If you want to predict your own sequences with using our pretrained models please refer the steps below.
 
 ### Step 1: Prepare your single fasta files
-Please prepare your fasta files with one protein per file. We follow the usual fasta file format that starts with `>{protein sequence name}`, then a protein sequence with 80 amino acid letters in a row. Here is our demo in the `/Data/source/abgB`
+Please prepare your fasta files with one protein per file. We follow the usual fasta file format that starts with `>{protein sequence name}`, then a protein sequence with 80 amino acid letters in a row. Here is our demo in the `/Data/source/abgB`.
 
 ```
 >abgB
@@ -62,10 +62,10 @@ VTPSPLK
 
 (1) Please name your protein sequence uniquely and as short as possible, since the protein sequence name will be used as the file name in the step 3, such as `abgB.pssm`, `abgB.spd33`.
 
-(2) Please name your single fasta files **without** using the suffix, such as using `abgB` instead of `abgB.fasta` or `abgB.fa`, otherwise the feature generation software in the step 3 will name the feature file with the format of `abgB.fasta.pssm` or `abgB.fa.pssm` 
+(2) Please name your single fasta files **without** using the suffix, such as using `abgB` instead of `abgB.fasta` or `abgB.fa`, otherwise the feature generation software in the step 3 will name the feature file with the format of `abgB.fasta.pssm` or `abgB.fa.pssm`.
 
 ### Step 2: Prepare your total fasta file
-We follow the usual fasta file format that starts with `>{protein sequence name}`, then a protein sequence with 80 amino acid letters in a row. Here is part of our demo in the `./Data/upload/input.fasta`
+We follow the usual fasta file format that starts with `>{protein sequence name}`, then a protein sequence with 80 amino acid letters in a row. Here is part of our demo in the `./Data/upload/input.fasta`.
 
 ```
 >aat
@@ -88,7 +88,7 @@ Note:
 
 (2) We deploy all feature generation softwares in our servers to calculate the features in bulk, the link below is utilized to map the sequence files to feature files as an example.
 
-(3) In the software SPOT-Contact, it needs a sequence file with suffix `.fasta`, thus you can rename the original fasta file `abgB` to `abgB.fasta` after generating other features 
+(3) In the software SPOT-Contact, it needs a sequence file with suffix `.fasta`, thus you can rename the original fasta file `abgB` to `abgB.fasta` after generating other features.
 
 (4) **THIS STEP WILL COST MOST OF THE TIME !!!!!** (The sequence with more amino acids will cost longer time, we recommend to use protein sequence with less than 700 amino acids.)
 
@@ -121,13 +121,13 @@ If you want to test a few of protein sequences, we recommend you to use our plat
 ## 4. How to train the GraphSol model with your own data? 
 If you want to train a model with your own data:
 
-(1) Please refer the new data process steps to generate 6 files. 
+(1) Please refer the feature generation steps to preprocess 6 feature files. 
 
 (2) Use `get1D_features.py` and `get2D_features.py` to generate two matrices, and then move them to the folders `./Data/node_features` and `./Data/edge_features`, respectively. 
 
-(3) Make a total csv file with the format like `./Data/eSol_train.csv` or `./Data/eSol_test.csv`
+(3) Make a total csv file with the format like `./Data/eSol_train.csv` or `./Data/eSol_test.csv`.
 
-(4) Run `$ python Train.py`, tune the hypermeters in the same files
+(4) Run `$ python Train.py`, tune the hypermeters in the same file.
  
 ---
  
