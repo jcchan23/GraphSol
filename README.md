@@ -123,7 +123,7 @@ All the prediction result will store with a csv file in `./Result/result.csv`, w
 | ... | ... | ... |
 
 ## Others
-If you want to test a few of protein sequences(since the limited calculation resources and longer waiting time for generating features), we recommend you to use our platform for only academic.
+If you want to test a few of protein sequences, we recommend you to use our platform for only academic.
 
 [高性能多尺度生物与材料计算平台](https://biomed.nscc-gz.cn:9094/apps/GraphSol)
 
