@@ -3,7 +3,7 @@ A Protein Solubility Predictor developed by Graph Convolutional Network and Pred
 
 The source code for our paper [Structure-aware protein solubility prediction from sequence through graph convolutional network and predicted contact map](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00488-1)
 
-## Files in the root directory
+## How to retrain GraphSol model and test?
 If you want to repeat our result, please refer the steps below.
 
 ### Step 1: Download all sequence features
@@ -28,8 +28,11 @@ Run the folloing python script and it will finish the test process in a few seco
 $ python Test.py
 ```
 
-## Files in the `./Predict_demo`
-**This is a predict demo that consist of 5 protein sequences `aaeX, aas, aat, abgA, abgB`, you can use `$ python predict.py` strightly, then a result file will be generated in the `./Predict_demo/Result/result.csv`**
+## How to predict protein sequences by pretrained GraphSol model?
+
+** Remarks: **
+
+**This is a predict demo that consist of 5 protein sequences `aaeX, aas, aat, abgA, abgB`, you can use `$ python predict.py` strightly, then a result file will be generated in the `./Predict_workflow/Result/result.csv`**
 
 If you want to predict your own sequences with using our pretrained models please refer the steps below.
 
@@ -124,11 +127,12 @@ All the prediction result will store with a csv file in `./Result/result.csv`, w
 | aas | 0.2957891821861267 | MLFSFFRNLCRVLYRVRVTGDTQALKGERVLITPNHVSFIDGILLGLFLPVRPVFAVYTSISQQWYMR... |
 | ... | ... | ... |
 
-## Others
+## The web server of GraphSol
 If you want to test a few of protein sequences, we recommend you to use our platform for only academic.
 
 [https://biomed.nscc-gz.cn:9094/apps/GraphSol](https://biomed.nscc-gz.cn:9094/apps/GraphSol)
 
+## How to train GraphSol model with your own data? 
 If you want to train a model with your own data:
 
 (1) Please refer the new data process steps to generate 6 files. 
