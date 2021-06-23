@@ -103,7 +103,7 @@ FGTQLAAGHHNEKFDFDEQVLAIAVETLARTALNFPWTRGI
 | [CCMPred](https://github.com/soedinglab/CCMpred) | v1.0 | abgB.a3m | abgB.mat |
 | [SPOT-Contact](https://sparks-lab.org/server/spot-contact/) | v1.0 | abgB.fasta, abgB.pssm, abgB.hhm, abgB.di, abgB.mat | abgB.spotcon |
 
-Then put all the generated files into the folder `./Data/source/`(We have provided a list of files as an example). Other precautions when using the feature generation software please refer ro the corresponding software document.
+Then put all the generated files into the folder `./Data/source/`(We have provided a list of files as an example). Other precautions when using the feature generation software please refer to the corresponding software document.
 
 ### Step 4: Run the predict code
 ```
