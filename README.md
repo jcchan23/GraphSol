@@ -30,7 +30,7 @@ $ python Test.py
 
 ---
 
-## 2. How to predict protein sequences by the pretrained GraphSol model?
+## 2. How to predict protein solubility by the pretrained GraphSol model?
 
 **Note:**
 
