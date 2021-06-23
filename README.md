@@ -34,7 +34,13 @@ $ python Test.py
 
 **Remarks:**
 
-**This is a predict demo that consists of 5 protein sequences `aaeX, aas, aat, abgA, abgB` with their preprocess features files, you can use `$ python predict.py` strightly, then a result file will be generated in the `./Predict/Result/result.csv`**
+**This is a predict demo that consists of 5 protein sequences `aaeX, aas, aat, abgA, abgB` with their preprocess features files, you can use `$python predict.py` strightly, then a result file will be generated in the `./Predict/Result/result.csv` with the output format: **
+
+| name | prediction | sequence |
+| -------- | -------- | -------- |
+| aaeX | 0.3201722800731659 | MSLFPVIVVFGLSFPPIFFELLLSLAIFWLVRRVLVPTGIYDFVWHPALFNTALYCCLFYLISRLFV |
+| aas | 0.2957891821861267 | MLFSFFRNLCRVLYRVRVTGDTQALKGERVLITPNHVSFIDGILLGLFLPVRPVFAVYTSISQQWY... |
+| ... | ... | ... |
 
 If you want to predict your own sequences with using our pretrained models please refer the steps below.
 
@@ -122,12 +128,7 @@ Then put all the generated files into the folder `./Data/source/`, we have provi
 ```
 $ python predict.py
 ```
-All the prediction result will store with a csv file in `./Result/result.csv`, with the output format below:
-| name | prediction | sequence |
-| -------- | -------- | -------- |
-| aaeX | 0.3201722800731659 | MSLFPVIVVFGLSFPPIFFELLLSLAIFWLVRRVLVPTGIYDFVWHPALFNTALYCCLFYLISRLFV |
-| aas | 0.2957891821861267 | MLFSFFRNLCRVLYRVRVTGDTQALKGERVLITPNHVSFIDGILLGLFLPVRPVFAVYTSISQQWYMR... |
-| ... | ... | ... |
+All the prediction result will store with a csv file in `./Result/result.csv`.
 
 ---
 
