@@ -28,7 +28,9 @@ Run the folloing python script and it will finish the test process in a few seco
 $ python Test.py
 ```
 
-## Files in the `./Predict_workflow`
+## Files in the `./Predict_demo`
+**This is a predict demo that consist of 5 protein sequences `aaeX, aas, aat, abgA, abgB`, you can use `$ python predict.py` strightly, then a result file will be generated in the `./Predict_demo/Result/result.csv`**
+
 If you want to predict your own sequences with using our pretrained models please refer the steps below.
 
 ### Step 1: Prepare your single fasta files
