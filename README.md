@@ -3,7 +3,7 @@ A Protein Solubility Predictor developed by Graph Convolutional Network and Pred
 
 The source code for our paper [Structure-aware protein solubility prediction from sequence through graph convolutional network and predicted contact map](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00488-1)
 
-## 1. How to retrain GraphSol model and test?
+## 1. How to retrain the GraphSol model and test?
 If you want to repeat our result, please refer the steps below.
 
 ### Step 1: Download all sequence features
@@ -30,9 +30,9 @@ $ python Test.py
 
 ---
 
-## 2. How to predict protein sequences by pretrained GraphSol model?
+## 2. How to predict protein sequences by the pretrained GraphSol model?
 
-** Remarks: **
+**Remarks:**
 
 **This is a predict demo that consist of 5 protein sequences `aaeX, aas, aat, abgA, abgB`, you can use `$ python predict.py` strightly, then a result file will be generated in the `./Predict_workflow/Result/result.csv`**
 
@@ -131,14 +131,14 @@ All the prediction result will store with a csv file in `./Result/result.csv`, w
 
 ---
 
-## 3. The web server of GraphSol
+## 3. The web server of the GraphSol model
 If you want to test a few of protein sequences, we recommend you to use our platform for only academic.
 
 [https://biomed.nscc-gz.cn:9094/apps/GraphSol](https://biomed.nscc-gz.cn:9094/apps/GraphSol)
 
 ---
 
-## 4. How to train GraphSol model with your own data? 
+## 4. How to train the GraphSol model with your own data? 
 If you want to train a model with your own data:
 
 (1) Please refer the new data process steps to generate 6 files. 
@@ -149,7 +149,7 @@ If you want to train a model with your own data:
 
 (4) Run `$ python Train.py`, tune the hypermeters in the same files
  
- ---
+---
  
 ## 5. Required packages
 The code has been tested running under Python 3.7.9, with the following packages installed (along with their dependencies):
