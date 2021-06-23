@@ -90,10 +90,13 @@ VTPSPLK
 ```
 
 ### Step 3: Prepare 5 node feature files and 1 edge feature file
-> Note: <br/>
-> (1) We don't integrate the feature generation software in our repository, please use the corresponding software to generate the feature files !!! <br/>
-> (2) We deploy all feature generation softwares in our servers to calculate the features in bulk, the link below is utilized to map the sequence files to feature files as an example. <br/>
-> (3) In the software SPOT-Contact, it needs a sequence file with suffix `.fasta`, thus you can rename the original fasta file `abgB` to `abgB.fasta` after generating other features 
+Note:
+
+(1) We don't integrate the feature generation software in our repository, please use the corresponding software to generate the feature files !!!
+
+(2) We deploy all feature generation softwares in our servers to calculate the features in bulk, the link below is utilized to map the sequence files to feature files as an example.
+
+(3) In the software SPOT-Contact, it needs a sequence file with suffix `.fasta`, thus you can rename the original fasta file `abgB` to `abgB.fasta` after generating other features 
 
 | Software | Version | Input | Output |
 | -------- | -------- | -------- | --------|
