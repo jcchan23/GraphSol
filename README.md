@@ -38,8 +38,8 @@ $ python Test.py
 
 | name | prediction | sequence |
 | -------- | -------- | -------- |
-| aaeX | 0.3201722800731659 | MSLFPVIVVFGLSFPPIFFELLLSLAIFWLVRRVLVPTGIYDFVWHPALFNTALYCCLFYLISRLFV |
-| aas | 0.2957891821861267 | MLFSFFRNLCRVLYRVRVTGDTQALKGERVLITPNHVSFIDGILLGLFLPVRPVFAVYTSISQQWY... |
+| aaeX | 0.3201722800731659 | MSLFPVIVVFGLSFPPIFFELLLSLAIFWLVRRVLVPTGIYDFVWHPALFNTALYC... |
+| aas | 0.2957891821861267 | MLFSFFRNLCRVLYRVRVTGDTQALKGERVLITPNHVSFIDGILLGLFLPVRPVFA... |
 | ... | ... | ... |
 
 If you want to predict your own sequences with using our pretrained models please refer the steps below.
@@ -65,7 +65,21 @@ VTPSPLK
 (2) Please name your single fasta files **without** using the suffix, such as using `abgB` instead of `abgB.fasta` or `abgB.fa`, otherwise the feature generation software in the step 3 will name the feature file with the format of `abgB.fasta.pssm` or `abgB.fa.pssm` 
 
 ### Step 2: Prepare your total fasta file
-We follow the usual fasta file format that starts with `>{protein sequence name}`, then a protein sequence with 80 amino acid letters in a row. More details can be founded in the `./Data/upload/input.fasta`
+We follow the usual fasta file format that starts with `>{protein sequence name}`, then a protein sequence with 80 amino acid letters in a row. Here is part of our demo in the `./Data/upload/input.fasta`
+
+```
+>aat
+MRLVQLSRHSIAFPSPEGALREPNGLLALGGDLSPARLLMAYQRGIFPWFSPGDPILWWSPDPRAVLWPESLHISRSMK
+RFHKRSPYRVTMNYAFGQVIEGCASDREEGTWITRGVVEAYHRLHELGHAHSIEVWREDELVGGMYGVAQGTLFCGESM
+FSRMENASKTALLVFCEEFIGHGGKLIDCQVLNDHTASLGACEIPRRDYLNYLNQMRLGRLPNNFWVPRCLFSPQE
+>abgA
+MESLNQFVNSLAPKLSHWRRDFHHYAESGWVEFRTATLVAEELHQLGYSLALGREVVNESSRMGLPDEFTLQREFERAR
+QQGALAQWIAAFEGGFTGIVATLDTGRPGPVMAFRVDMDALDLSEEQDVSHRPYRDGFASCNAGMMHACGHDGHTAIGL
+GLAHTLKQFESGLHGVIKLIFQPAEEGTRGARAMVDAGVVDDVDYFTAVHIGTGVPAGTVVCGSDNFMATTKFDAHFTG
+TAAHAGAKPEDGHNALLAAAQATLALHAIAPHSEGASRVNVGVMQAGSGRNVVPASALLKVETRGASDVINQYVFDRAQ
+QAIQGAATMYGVGVETRLMGAATASSPSPQWVAWLQSQAAQVAGVNQAIERVEAPAGSEDATLMMARVQQHQGQASYVV
+FGTQLAAGHHNEKFDFDEQVLAIAVETLARTALNFPWTRGI
+```
 
 ### Step 3: Prepare 5 node feature files and 1 edge feature file
 Note:
