@@ -33,6 +33,7 @@ If you want to predict your own sequences with using our pretrained models pleas
 
 ### Step 1: Prepare your single fasta files
 Please prepare your fasta files with one protein per file. We follow the usual fasta file format that starts with `>{protein sequence name}`, then a protein sequence with 80 amino acid letters in a row. Here is our demo in the `/Data/source/abgB`
+
 ```
 >abgB
 MQEIYRFIDDAIEADRQRYTDIADQIWDHPETRFEEFWSAEHLASALESAGFTVTRNVGNIPNAFIASFGQGKPVIALL
@@ -43,6 +44,7 @@ FGTPEWNSEELAFAKQIQATLTSNDRQNSLNNIAATGGENGKVFALRHRETVLANEVAPYAATDNVLAASTDVGDVSWK
 LPVAQCFSPCFAVGTPLHTWQLVSQGRTSIAHKGMLLAAKTMAATTVNLFLDSGLLQECQQEHQQVTDTQPYHCPIPKN
 VTPSPLK
 ```
+
 Note:
 
 (1) Please name your protein sequence uniquely and as short as possible, since the protein sequence name will be used as the file name in the step 3, such as `abgB.pssm`, `abgB.spd33`.
@@ -51,6 +53,7 @@ Note:
 
 ### Step 2: Prepare your total fasta file
 We follow the usual fasta file format that starts with `>{protein sequence name}`, then a protein sequence with 80 amino acid letters in a row. Here is our demo in the `./Data/upload/input.fasta`
+
 ```
 >aaeX
 MSLFPVIVVFGLSFPPIFFELLLSLAIFWLVRRVLVPTGIYDFVWHPALFNTALYCCLFYLISRLFV
