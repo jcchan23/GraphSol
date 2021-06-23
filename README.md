@@ -84,7 +84,7 @@ FGTQLAAGHHNEKFDFDEQVLAIAVETLARTALNFPWTRGI
 ```
 
 ### Step 3: Prepare 5 node feature files and 1 edge feature file
-Note:
+**Note:**
 
 (1) We don't integrate the feature generation software in our repository, please use the corresponding software to generate the feature files !!!
 
