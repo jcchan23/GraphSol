@@ -45,7 +45,9 @@ $ python Test.py
 If you want to predict your own sequences with using our pretrained models please refer the steps below.
 
 ### Step 1: Prepare your single fasta files
-Please prepare your fasta files with one protein per file. We follow the usual fasta file format that starts with `>{protein sequence name}`, then a protein sequence with 80 amino acid letters in a row. Here is our demo in the `/Data/source/abgB`.
+Please prepare your fasta files with one protein per file. 
+
+We follow the usual fasta file format that starts with `>{protein sequence name}`, then a protein sequence with 80 amino acid letters in a row. Here is our demo in the `/Data/source/abgB`.
 
 ```
 >abgB
