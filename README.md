@@ -36,8 +36,6 @@ $ python Test.py
 
 **This is a predict demo that consist of 5 protein sequences `aaeX, aas, aat, abgA, abgB`, you can use `$ python predict.py` strightly, then a result file will be generated in the `./Predict_workflow/Result/result.csv`**
 
----
-
 If you want to predict your own sequences with using our pretrained models please refer the steps below.
 
 ### Step 1: Prepare your single fasta files
