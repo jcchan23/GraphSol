@@ -28,11 +28,15 @@ Run the folloing python script and it will finish the test process in a few seco
 $ python Test.py
 ```
 
+---
+
 ## 2. How to predict protein sequences by pretrained GraphSol model?
 
 ** Remarks: **
 
 **This is a predict demo that consist of 5 protein sequences `aaeX, aas, aat, abgA, abgB`, you can use `$ python predict.py` strightly, then a result file will be generated in the `./Predict_workflow/Result/result.csv`**
+
+---
 
 If you want to predict your own sequences with using our pretrained models please refer the steps below.
 
@@ -127,10 +131,14 @@ All the prediction result will store with a csv file in `./Result/result.csv`, w
 | aas | 0.2957891821861267 | MLFSFFRNLCRVLYRVRVTGDTQALKGERVLITPNHVSFIDGILLGLFLPVRPVFAVYTSISQQWYMR... |
 | ... | ... | ... |
 
+---
+
 ## 3. The web server of GraphSol
 If you want to test a few of protein sequences, we recommend you to use our platform for only academic.
 
 [https://biomed.nscc-gz.cn:9094/apps/GraphSol](https://biomed.nscc-gz.cn:9094/apps/GraphSol)
+
+---
 
 ## 4. How to train GraphSol model with your own data? 
 If you want to train a model with your own data:
@@ -143,6 +151,8 @@ If you want to train a model with your own data:
 
 (4) Run `$ python Train.py`, tune the hypermeters in the same files
  
+ ---
+ 
 ## 5. Required packages
 The code has been tested running under Python 3.7.9, with the following packages installed (along with their dependencies):
 - torch==1.6.0
@@ -150,6 +160,8 @@ The code has been tested running under Python 3.7.9, with the following packages
 - scikit-learn==0.23.2
 - pandas==1.1.0
 - tqdm==4.48.2
+
+---
 
 ## 6. Citations
 Please cite the following paper if you use this code in your work.
@@ -165,6 +177,8 @@ Please cite the following paper if you use this code in your work.
   publisher={Springer}
 }
 ```
+
+---
 
 ## 7. TODO
 We will merge the predict workflow into the original workflow.
