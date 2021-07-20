@@ -11,8 +11,6 @@ The code has been tested under Python 3.7.9, with the following packages install
 - pandas==1.1.0
 - tqdm==4.48.2
 
----
-
 ## 2. How to retrain the GraphSol model and test?
 If you want to reproduce our result, please refer to the steps below.
 
@@ -37,8 +35,6 @@ Run the following python script and it will be finished in a few seconds.
 ```
 $ python Test.py
 ```
-
----
 
 ## 3. How to predict protein solubility by the pretrained GraphSol model?
 
@@ -121,14 +117,11 @@ $ python predict.py
 ```
 All the prediction result will be stored as in `./Result/result.csv`.
 
----
-
 ## 4. The web server of the GraphSol model
 Our platform are highly recommended to be academicly used only (e.g. for limited protein sequences).
 
 [https://biomed.nscc-gz.cn:9094/apps/GraphSol](https://biomed.nscc-gz.cn:9094/apps/GraphSol)
 
----
 
 ## 5. How to train the GraphSol model with your own data? 
 If you want to train a model with your own data:
@@ -140,14 +133,10 @@ If you want to train a model with your own data:
 (3) Make a general csv file with the format like `./Data/eSol_train.csv` or `./Data/eSol_test.csv`.
 
 (4) Run `$ python Train.py`, and optionly tune the hypermeters in the same file.
- 
----
 
 ## 6. TODO
 
 - [ ] Merge the prediction workflow into the original workflow.
-
----
 
 ## 7. Citations
 Please cite our paper if you want to use our code in your work.
@@ -162,8 +151,3 @@ Please cite our paper if you want to use our code in your work.
   year={2021},
   publisher={Springer}
 }
-
-
----
-
-
