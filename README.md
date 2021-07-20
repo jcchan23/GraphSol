@@ -3,7 +3,17 @@ A Protein Solubility Predictor developed by Graph Convolutional Network and Pred
 
 The source code for our paper [Structure-aware protein solubility prediction from sequence through graph convolutional network and predicted contact map](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00488-1)
 
-## 1. How to retrain the GraphSol model and test?
+## 1. Dependencies
+The code has been tested under Python 3.7.9, with the following packages installed (along with their dependencies):
+- torch==1.6.0
+- numpy==1.19.1
+- scikit-learn==0.23.2
+- pandas==1.1.0
+- tqdm==4.48.2
+
+---
+
+## 2. How to retrain the GraphSol model and test?
 If you want to reproduce our result, please refer to the steps below.
 
 ### Step 1: Download all sequence features
@@ -30,7 +40,7 @@ $ python Test.py
 
 ---
 
-## 2. How to predict protein solubility by the pretrained GraphSol model?
+## 3. How to predict protein solubility by the pretrained GraphSol model?
 
 **Note:**
 
@@ -113,14 +123,14 @@ All the prediction result will be stored as in `./Result/result.csv`.
 
 ---
 
-## 3. The web server of the GraphSol model
+## 4. The web server of the GraphSol model
 Our platform are highly recommended to be academicly used only (e.g. for limited protein sequences).
 
 [https://biomed.nscc-gz.cn:9094/apps/GraphSol](https://biomed.nscc-gz.cn:9094/apps/GraphSol)
 
 ---
 
-## 4. How to train the GraphSol model with your own data? 
+## 5. How to train the GraphSol model with your own data? 
 If you want to train a model with your own data:
 
 (1) Please refer to the feature generation steps to preprocess 6 feature files. 
@@ -132,20 +142,16 @@ If you want to train a model with your own data:
 (4) Run `$ python Train.py`, and optionly tune the hypermeters in the same file.
  
 ---
- 
-## 5. Required packages
-The code has been tested under Python 3.7.9, with the following packages installed (along with their dependencies):
-- torch==1.6.0
-- numpy==1.19.1
-- scikit-learn==0.23.2
-- pandas==1.1.0
-- tqdm==4.48.2
+
+## 6. TODO
+
+- [ ] Merge the prediction workflow into the original workflow.
 
 ---
 
-## 6. Citations
+## 7. Citations
 Please cite our paper if you want to use our code in your work.
-```
+```bibtex
 @article{chen2021structure,
   title={Structure-aware protein solubility prediction from sequence through graph convolutional network and predicted contact map},
   author={Chen, Jianwen and Zheng, Shuangjia and Zhao, Huiying and Yang, Yuedong},
@@ -156,11 +162,8 @@ Please cite our paper if you want to use our code in your work.
   year={2021},
   publisher={Springer}
 }
-```
+
 
 ---
 
-## 7. TODO
-We will merge the prediction workflow into the original workflow.
 
-(Under developed...)
