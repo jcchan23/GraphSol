@@ -25,7 +25,7 @@ SEED = 2333
 np.random.seed(SEED)
 torch.manual_seed(SEED)
 if torch.cuda.is_available():
-    torch.cuda.set_device(0)
+    torch.cuda.set_device(1)
     torch.cuda.manual_seed(SEED)
 
 # Model parameters
@@ -235,8 +235,6 @@ class Model(nn.Module):
 
 
 def train_one_epoch(model, data_loader, epoch):
-    for param_group in model.optimizer.param_groups:
-        param_group['lr'] = LEARNING_RATE
 
     epoch_loss_train = 0.0
     n_batches = 0
@@ -304,11 +302,11 @@ def evaluate(model, data_loader):
             y_true = y_true.float()
 
             loss = model.criterion(y_pred, y_true)
-            y_pred = y_pred.cpu().detach().numpy()
-            y_true = y_true.cpu().detach().numpy()
-            valid_pred.append(y_pred)
-            valid_true.append(y_true)
-            valid_name.append(sequence_names[0])
+            y_pred = y_pred.cpu().detach().numpy().tolist()
+            y_true = y_true.cpu().detach().numpy().tolist()
+            valid_pred.extend(y_pred)
+            valid_true.extend(y_true)
+            valid_name.extend(sequence_names)
 
             epoch_loss += loss.item()
             n_batches += 1
@@ -356,7 +354,7 @@ def train(model, train_dataframe, valid_dataframe, fold=0):
         print("========== Evaluate Train set ==========")
         _, train_true, train_pred, _ = evaluate(model, train_loader)
         result_train = analysis(train_true, train_pred)
-        print("Train loss: ", epoch_loss_train_avg)
+        print("Train loss: ", np.sqrt(epoch_loss_train_avg))
         print("Train pearson:", result_train['pearson'])
         print("Train r2:", result_train['r2'])
         print("Train binary acc: ", result_train['binary_acc'])
@@ -368,7 +366,7 @@ def train(model, train_dataframe, valid_dataframe, fold=0):
         print("Train sensitivity: ", result_train['sensitivity'])
         print("Train specificity: ", result_train['specificity'])
 
-        train_losses.append(epoch_loss_train_avg)
+        train_losses.append(np.sqrt(epoch_loss_train_avg))
         train_pearson.append(result_train['pearson'])
         train_r2.append(result_train['r2'])
         train_binary_acc.append(result_train['binary_acc'])
@@ -383,7 +381,7 @@ def train(model, train_dataframe, valid_dataframe, fold=0):
         print("========== Evaluate Valid set ==========")
         epoch_loss_valid_avg, valid_true, valid_pred, valid_name = evaluate(model, valid_loader)
         result_valid = analysis(valid_true, valid_pred)
-        print("Valid loss: ", epoch_loss_valid_avg)
+        print("Valid loss: ", np.sqrt(epoch_loss_valid_avg))
         print("Valid pearson:", result_valid['pearson'])
         print("Valid r2:", result_valid['r2'])
         print("Valid binary acc: ", result_valid['binary_acc'])
@@ -395,7 +393,7 @@ def train(model, train_dataframe, valid_dataframe, fold=0):
         print("Valid sensitivity: ", result_valid['sensitivity'])
         print("Valid specificity: ", result_valid['specificity'])
 
-        valid_losses.append(epoch_loss_valid_avg)
+        valid_losses.append(np.sqrt(epoch_loss_valid_avg))
         valid_pearson.append(result_valid['pearson'])
         valid_r2.append(result_valid['r2'])
         valid_binary_acc.append(result_valid['binary_acc'])
@@ -411,9 +409,6 @@ def train(model, train_dataframe, valid_dataframe, fold=0):
             best_val_loss = epoch_loss_valid_avg
             best_epoch = epoch + 1
             torch.save(model.state_dict(), os.path.join(Model_Path, 'Fold' + str(fold) + '_best_model.pkl'))
-
-            valid_true = [a[0] for a in valid_true]
-            valid_pred = [a[0] for a in valid_pred]
             valid_detail_dataframe = pd.DataFrame({'gene': valid_name, 'solubility': valid_true, 'prediction': valid_pred})
             valid_detail_dataframe.sort_values(by=['gene'], inplace=True)
             valid_detail_dataframe.to_csv(Result_Path + 'Fold' + str(fold) + "_valid_detail.csv", header=True, sep=',')
@@ -491,7 +486,7 @@ def cross_validation(all_dataframe,fold_number=10):
     fold = 0
 
     for train_index, valid_index in kfold.split(sequence_names, sequence_labels):
-        print("\n\n========== Fold " + str(fold + 1) + " ==========")
+        print("\n========== Fold " + str(fold + 1) + " ==========")
         train_dataframe = all_dataframe.iloc[train_index, :]
         valid_dataframe = all_dataframe.iloc[valid_index, :]
         print("Training on", str(train_dataframe.shape[0]), "examples, Validation on", str(valid_dataframe.shape[0]),

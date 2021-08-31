@@ -25,7 +25,7 @@ SEED = 2333
 np.random.seed(SEED)
 torch.manual_seed(SEED)
 if torch.cuda.is_available():
-    torch.cuda.set_device(0)
+    torch.cuda.set_device(1)
     torch.cuda.manual_seed(SEED)
 
 # Model parameters
@@ -260,11 +260,11 @@ def evaluate(model, data_loader):
             y_true = y_true.float()
 
             loss = model.criterion(y_pred, y_true)
-            y_pred = y_pred.cpu().detach().numpy()
-            y_true = y_true.cpu().detach().numpy()
-            valid_pred.append(y_pred)
-            valid_true.append(y_true)
-            valid_name.append(sequence_names[0])
+            y_pred = y_pred.cpu().detach().numpy().tolist()
+            y_true = y_true.cpu().detach().numpy().tolist()
+            valid_pred.extend(y_pred)
+            valid_true.extend(y_true)
+            valid_name.extend(sequence_names)
 
             epoch_loss += loss.item()
             n_batches += 1
@@ -282,14 +282,12 @@ def test(test_dataframe):
         model = Model()
         if torch.cuda.is_available():
             model.cuda()
-        model.load_state_dict(torch.load(Model_Path + model_name,map_location='cuda:0'))
+        model.load_state_dict(torch.load(Model_Path + model_name,map_location='cpu'))
 
         epoch_loss_test_avg, test_true, test_pred, test_name = evaluate(model, test_loader)
-        test_true = [true[0] for true in test_true]
-        test_pred = [pred[0] for pred in test_pred]
         result_test = analysis(test_true, test_pred)
         print("\n========== Evaluate Test set ==========")
-        print("Test loss: ", epoch_loss_test_avg)
+        print("Test loss: ", np.sqrt(epoch_loss_test_avg))
         print("Test pearson:", result_test['pearson'])
         print("Test r2:", result_test['r2'])
         print("Test binary acc: ", result_test['binary_acc'])
@@ -302,7 +300,7 @@ def test(test_dataframe):
         print("Test specificity: ", result_test['specificity'])
 
         test_result[model_name] = [
-            epoch_loss_test_avg,
+            np.sqrt(epoch_loss_test_avg),
             result_test['pearson'],
             result_test['r2'],
             result_test['binary_acc'],
