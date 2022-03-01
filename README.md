@@ -3,6 +3,14 @@ A Protein Solubility Predictor developed by Graph Convolutional Network and Pred
 
 The source code for our paper [Structure-aware protein solubility prediction from sequence through graph convolutional network and predicted contact map](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00488-1)
 
+## 0. Update(2022-03-01)
+I have reimplemented the [GraphSol](https://github.com/jcchan23/SAIL/tree/main/Repeat/GraphSol) model by using dgl, which have been optimized in training time and costing memory without losing the accuracy.
+
+## TODO
+
+- [x] Merge the prediction workflow into the original workflow.
+- [x] Batch size > 1 in the reimplemention.
+
 ## 1. Dependencies
 The code has been tested under Python 3.7.9, with the following packages installed (along with their dependencies):
 - torch==1.6.0
@@ -134,11 +142,7 @@ If you want to train a model with your own data:
 
 (4) Run `$ python Train.py`, and optionly tune the hypermeters in the same file.
 
-## 6. TODO
-
-- [ ] Merge the prediction workflow into the original workflow.
-
-## 7. Citations
+## 6. Citations
 Please cite our paper if you want to use our code in your work.
 ```bibtex
 @article{chen2021structure,
