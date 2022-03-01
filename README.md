@@ -128,7 +128,7 @@ All the prediction result will be stored as in `./Result/result.csv`.
 ## 4. The web server of the GraphSol model
 Our platform are highly recommended to be academicly used only (e.g. for limited protein sequences).
 
-[https://biomed.nscc-gz.cn:9094/apps/GraphSol](https://biomed.nscc-gz.cn:9094/apps/GraphSol)
+[https://biomed.nscc-gz.cn/apps/GraphSol](https://biomed.nscc-gz.cn/apps/GraphSol)
 
 
 ## 5. How to train the GraphSol model with your own data? 
